@@ -1,0 +1,208 @@
+:root {
+    --black: #000000;
+    --white-glass: rgba(255, 255, 255, 0.65);
+    --yellow: rgba(255, 222, 89, 0.95);
+    --pink: rgba(255, 113, 154, 0.95);
+    --blue: rgba(94, 158, 255, 1);
+    --green: rgba(74, 222, 128, 0.95);
+    --red: rgba(248, 113, 113, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #475569 0%, #0f172a 100%);
+    background-attachment: fixed;
+    color: var(--black);
+    padding: 30px 15px;
+    min-height: 100vh;
+}
+
+.glass-blob-1, .glass-blob-2 {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.5;
+}
+.glass-blob-1 { top: 0; left: -50px; background: #38bdf8; }
+.glass-blob-2 { bottom: 0; right: -50px; background: #818cf8; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+}
+.floating { animation: float 6s ease-in-out infinite; }
+.floating-reverse { animation: float 8s ease-in-out infinite reverse; }
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+.neo-glass {
+    border: 3px solid var(--black);
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px var(--black);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.neo-glass:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 11px 11px 0px var(--black);
+}
+
+.bg-white { background: var(--white-glass); }
+.bg-yellow { background: var(--yellow); }
+.bg-pink { background: var(--pink); }
+.bg-blue { background: var(--blue); }
+.bg-green { background: var(--green); }
+
+.header-container {
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typing-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    min-width: 380px;
+}
+
+header h1 { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; }
+
+.cursor {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+}
+
+.dashboard { 
+    display: grid; 
+    grid-template-columns: 1.2fr 2fr; 
+    gap: 25px; 
+}
+
+h2 { 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+    border-bottom: 3px solid var(--black); 
+}
+
+.input-group { margin-bottom: 15px; }
+
+.input-group label { 
+    display: block; 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid var(--black);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    outline: none;
+}
+
+.btn-neo {
+    width: 100%;
+    padding: 14px;
+    border: 3px solid var(--black);
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px var(--black);
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btn-neo:active { 
+    transform: translate(4px, 4px); 
+    box-shadow: 0px 0px 0px var(--black); 
+}
+
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
+
+.stat-card { text-align: center; }
+
+.stat-card p { 
+    font-size: 1.5rem; 
+    font-weight: 800; 
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+    width: 100%;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+th, td { 
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 2px solid var(--black); 
+    font-weight: 600; 
+}
+
+.badge {
+    padding: 6px 12px;
+    border: 2px solid var(--black);
+    border-radius: 8px;
+    font-weight: 800;
+    box-shadow: 2px 2px 0px var(--black);
+}
+
+.badge-lulus { background: #4ade80; }
+.badge-gagal { background: #f87171; }
+
+@media (max-width: 850px) { 
+    .dashboard { grid-template-columns: 1fr; } 
+    .typing-wrapper { min-width: 100%; } 
+}
+
+#lottieHeader {
+    display: block;
+    margin-bottom: 10px; /* Memberi jarak ke teks di bawahnya */
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.1)); /* Opsional: efek bayangan halus */
+}
+
+/* Memastikan header tetap rapi saat ada animasi */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}

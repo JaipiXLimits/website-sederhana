@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Master By Jaipi X Breath</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+
+    <div class="glass-blob-1 floating"></div>
+    <div class="glass-blob-2 floating-reverse"></div>
+
+    <div class="container">
+        <header class="neo-glass bg-yellow header-container">
+            <div class="header-content">
+    <div id="lottieHeader" style="width: 150px; height: 150px; margin: 0 auto;"></div>
+    
+    <div class="typing-wrapper">
+        <h1 id="appTitle"></h1><span class="cursor">|</span>
+    </div>
+    <p>By Kelompok 6</p>
+    <small>Sistem Manajemen Nilai Mahasiswa Modern</small>
+</div>
+        </header>
+
+        <main class="dashboard">
+            <div class="left-panel">
+                <section class="neo-glass bg-white">
+                    <h2>Input Nilai</h2>
+                    <form id="formMahasiswa">
+                        <div class="input-group">
+                            <label for="nama">Nama Mahasiswa</label>
+                            <input type="text" id="nama" placeholder="Masukkan nama..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nilai">Nilai Akhir</label>
+                            <input type="text" inputmode="decimal" id="nilai" placeholder="Contoh: 85,5" required>
+                        </div>
+                        <button type="submit" class="btn-neo bg-blue">Simpan Data</button>
+                    </form>
+                </section>
+
+                <div class="stats-grid">
+                    <div class="neo-glass bg-pink stat-card">
+                        <h3>Rata-rata</h3>
+                        <p id="rataRata">0</p>
+                    </div>
+                    <div class="neo-glass bg-green stat-card">
+                        <h3>Tertinggi</h3>
+                        <p id="nilaiTertinggi">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <section class="neo-glass bg-white chart-section">
+                    <h2>Visualisasi Nilai</h2>
+                    <div class="chart-container">
+                        <canvas id="grafikNilai"></canvas>
+                    </div>
+                </section>
+            </div>
+
+            <section class="neo-glass bg-white table-section">
+                <h2>Daftar Mahasiswa</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Nilai</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelMahasiswa">
+                            <tr id="emptyRow">
+                                <td colspan="4" class="text-center">Belum ada data tersedia.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
