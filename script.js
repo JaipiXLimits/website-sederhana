@@ -11,13 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Menjalankan animasi ketik
     jalankanAnimasiKetik("Grade Master", "appTitle", 150, 75, 2500);
 
-    // Memuat Animasi Lottie
+    // Memuat Animasi Lottie secara Offline
     lottie.loadAnimation({
-        container: document.getElementById('lottieHeader'), // Harus sesuai dengan ID di HTML
+        container: document.getElementById('lottieHeader'), 
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'lottie.json' // Pastikan file ini satu folder dengan index.html
+        // Kita menggunakan variabel dataAnimasi yang ada di lottieData.js
+        animationData: dataAnimasi 
     });
 });
 
